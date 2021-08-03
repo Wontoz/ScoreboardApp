@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './img/Simumatik_Logo.png';
 import 'antd/dist/antd.css';
 import TableBody from './components/Table';
 import TableHeader from './components/TableHeader';
@@ -28,7 +28,11 @@ function App() {
           border: '1px solid black',
           backgroundColor: '#F0F2F5',
           zIndex: '999'
-        }}>Header </Header>
+        }}>
+          <img src={logo} style={{
+            width: '200px'
+          }}></img>
+        </Header>
         <Content style={{
           width: '60%',
           margin: '60px auto auto auto',
