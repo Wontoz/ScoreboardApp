@@ -1,29 +1,43 @@
-import React from 'react';
-import { Modal, Button } from 'antd';
+import React, { Component} from 'react';
+import { Modal, Button, Input } from 'antd';
 
-const AddPlayerButton = () => {
-    const [isModalVisible, setIsModalVisible] = React.useState(false);
+class AddPlayerButton extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isModalVisible: false,
+            playerName: (''),
+            newPlayer: [{ key: 5, participant: this.playerName, wins: 0, losses: 0},]
+        };
+    }
 
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
+    showModal(){
+        this.setState({isModalVisible: true})
+    }
 
-    const hideModal = () => {
-        setIsModalVisible(false);
-    };
-    
-    return (
-        <>
-            <Button type="primary" onClick={showModal}>
-                Add player
-            </Button>
-            <Modal title="Add player" visible={isModalVisible} onOk={hideModal} onCancel={hideModal}>
-                <p>Name...</p>
-                <p>Wins...</p>
-                <p>Losses...</p>
-            </Modal>
-        </>
-    )
+    hideModal(){
+        this.setState({isModalVisible: false})
+    } 
+    changePlayerName(e) {
+        this.setState({playerName: e.target.value})
+    }
+
+    //Denna ska parent node ha
+    addPlayer(e) {
+        alert(this.state.playerName)
+        this.hideModal()
+    }
+    render(){
+        return (
+            <>
+                <Button type="primary" onClick={this.showModal.bind(this)}>
+                    Add Person
+                </Button>
+                <Modal title="Add player" visible={this.state.isModalVisible} onOk={this.addPlayer.bind(this)} onCancel={this.hideModal.bind(this)}>
+                    <Input size="large" placeholder="Enter name:" onChange={this.changePlayerName.bind(this)}/>
+                </Modal>
+            </>
+        )
+    }
 }
-
 export default AddPlayerButton;

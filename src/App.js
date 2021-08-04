@@ -2,9 +2,9 @@ import logo from './img/Simumatik_Logo.png';
 import 'antd/dist/antd.css';
 import TableBody from './components/Table';
 import TableHeader from './components/TableHeader';
-import AddPlayerButton from './components/AddPlayerButton';
-import { Layout} from 'antd';
+import { Layout } from 'antd';
 import './App.css';
+import { useState } from 'react';
 
 const { Header, Content, Sider } = Layout;
 
@@ -12,16 +12,16 @@ function App() {
   return (
     <Layout>
       <Sider
-      style={{
-        overflow: 'auto',
-        height: '100vh',
-        position: 'relative',
-        left: 0,
-        backgroundColor: '#F0F2F5'
-      }}
-    ></Sider>
+        style={{
+          overflow: 'auto',
+          height: '100vh',
+          position: 'relative',
+          left: 0,
+          backgroundColor: '#F0F2F5'
+        }}
+      ></Sider>
       <Layout>
-        <Header style = {{
+        <Header style={{
           width: '100vw',
           position: 'fixed',
           left: 0,
@@ -38,19 +38,18 @@ function App() {
           margin: '60px auto auto auto',
           padding: '0'
         }}>
-          <TableHeader></TableHeader>
           <TableBody></TableBody>
         </Content>
       </Layout>
       <Sider
-      style={{
-        overflow: 'auto',
-        height: '100vh',
-        position: 'relative',
-        right: 0,
-        backgroundColor: '#F0F2F5'
-      }}
-    ></Sider>
+        style={{
+          overflow: 'auto',
+          height: '100vh',
+          position: 'relative',
+          right: 0,
+          backgroundColor: '#F0F2F5'
+        }}
+      ></Sider>
     </Layout>
   );
 }
