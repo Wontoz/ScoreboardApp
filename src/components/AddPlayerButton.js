@@ -21,19 +21,18 @@ class AddPlayerButton extends Component {
     changePlayerName(e) {
         this.setState({playerName: e.target.value})
     }
-
-    //Denna ska parent node ha
-    addPlayer(e) {
-        alert(this.state.playerName)
-        this.hideModal()
+    handleNewPlayer() {
+        this.props.action(this.state.playerName);
+        this.hideModal();
     }
+
     render(){
         return (
             <>
                 <Button type="primary" onClick={this.showModal.bind(this)}>
                     Add Person
                 </Button>
-                <Modal title="Add player" visible={this.state.isModalVisible} onOk={this.addPlayer.bind(this)} onCancel={this.hideModal.bind(this)}>
+                <Modal title="Add player" visible={this.state.isModalVisible} onOk={this.handleNewPlayer.bind(this)} onCancel={this.hideModal.bind(this)}>
                     <Input size="large" placeholder="Enter name:" onChange={this.changePlayerName.bind(this)}/>
                 </Modal>
             </>
