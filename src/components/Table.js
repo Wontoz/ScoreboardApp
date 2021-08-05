@@ -19,7 +19,7 @@ class TableBody extends React.Component {
           dataIndex: 'participant',
           key: 'participant',
           defaultSortOrder: 'descend',
-          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses), 
+          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses),
         },
         {
           title: 'Wins',
@@ -73,7 +73,7 @@ class TableBody extends React.Component {
     newArr[playerKey].losses++;
     this.setState({ players: newArr })
   }
-  
+
   //Updates keys after performed deletion
   //E.g. if row 5 is deleted:
   //Row 6 key is updated from 6 --> 5
@@ -81,8 +81,8 @@ class TableBody extends React.Component {
   updateTable(key) {
     const newArr = this.state.players.slice()
     const length = newArr.length;
-    for(let i = key; i < length; i++){
-      newArr[i].key--; 
+    for (let i = key; i < length; i++) {
+      newArr[i].key--;
     };
   }
 

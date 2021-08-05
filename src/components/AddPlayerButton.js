@@ -32,11 +32,11 @@ const AddPlayerButton = (props) => {
             <Button type="primary" onClick={showModal}>
                 Add Person
             </Button>
-            <Modal 
-            title="Add player" 
-            visible={isVisible} 
-            onOk={handleAddPlayer} 
-            onCancel={hideModal}>
+            <Modal
+                title="Add player"
+                visible={isVisible}
+                onOk={handleAddPlayer}
+                onCancel={hideModal}>
                 <Input size="large" placeholder="Enter name:" onChange={handleInputChange} />
             </Modal>
         </>
