@@ -10,9 +10,9 @@ class TableBody extends React.Component {
 
     this.state = {
       players: [
-        { key: 0, participant: 'Player 1', wins: 5, losses: 0 },
-        { key: 1, participant: 'Player 2', wins: 4, losses: 0 },
-        { key: 2, participant: 'Player 3', wins: 3, losses: 0 },
+        { key: 0, participant: 'Name 1', wins: 5, losses: 0 },
+        { key: 1, participant: 'Name 2', wins: 4, losses: 0 },
+        { key: 2, participant: 'Name 3', wins: 3, losses: 0 },
       ],
       columns: [
         {
