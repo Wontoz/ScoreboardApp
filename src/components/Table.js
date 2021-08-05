@@ -6,7 +6,8 @@ class TableBody extends React.Component {
     super(props);
 
     this.state = {
-      visible: false,
+      isEditModalVisible: false,
+      playerToEdit: '',
       players: [
         { key: 0, participant: 'Player 1', wins: 5, losses: 0 },
         { key: 1, participant: 'Player 2', wins: 4, losses: 0 },
@@ -35,9 +36,21 @@ class TableBody extends React.Component {
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
-            <p onClick={this.handleWinIncrease.bind(this, record.key)}>
+            <>
+            <p onClick={this.showEditModal.bind(this, record.key)}>
               Add win to player {record.key}
             </p>
+            <Modal
+            title="Alter score"
+            visible={this.state.isEditModalVisible}
+            onCancel={this.hideEditModal.bind(this)}
+            onOk={this.handleWinIncrease.bind(this, this.state.playerToEdit)}
+            closable={false}
+            okText="Yes"
+            cancelText="No"
+            >Are you sure you want to adjust the score for player {this.state.playerToEdit}?
+            </Modal>
+            </>
           )
         },
         {
@@ -45,9 +58,21 @@ class TableBody extends React.Component {
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (
-            <p onClick={this.handleLossIncrease.bind(this, record.key)}>
-              Add loss to player {record.key}
+            <>
+            <p onClick={this.showEditModal.bind(this, record.key)}>
+              Add win to player {record.key}
             </p>
+            <Modal
+            title="Alter score"
+            visible={this.state.isEditModalVisible}
+            onCancel={this.hideEditModal.bind(this)}
+            onOk={this.handleLossIncrease.bind(this, this.state.playerToEdit)}
+            closable={false}
+            okText="Yes"
+            cancelText="No"
+            >Are you sure you want to adjust the score for player {this.state.playerToEdit}?
+            </Modal>
+            </>
           )
         },
         {
@@ -69,12 +94,14 @@ class TableBody extends React.Component {
     const newArr = this.state.players.slice()
     newArr[playerKey].wins++;
     this.setState({ players: newArr })
+    this.hideEditModal()
   }
 
   handleLossIncrease(playerKey) {
     const newArr = this.state.players.slice()
     newArr[playerKey].losses++;
     this.setState({ players: newArr })
+    this.hideEditModal()
   }
 
 
@@ -82,6 +109,14 @@ class TableBody extends React.Component {
     const { players } = this.state;
     const newPlayers = players.filter((item) => item.key !== key);
     this.setState({ players: newPlayers })
+  }
+  
+  showEditModal(key) {
+    this.setState({ isEditModalVisible: true})
+    this.setState({playerToEdit: key})
+  }
+  hideEditModal() {
+    this.setState({ isEditModalVisible: false})
   }
 
   showModal() {
