@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Table, Button, Row, Col, Modal, Input } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 
@@ -94,14 +94,6 @@ class TableBody extends React.Component {
     this.setState({ players: newPlayers })
     
     this.updateTable(key);
-  }
-  
-  showEditModal(key) {
-    this.setState({ isEditModalVisible: true})
-    this.setState({playerToEdit: key})
-  }
-  hideEditModal() {
-    this.setState({ isEditModalVisible: false})
   }
 
   showModal() {
