@@ -60,7 +60,7 @@ class TableBody extends React.Component {
           render: (key, record,) => (
             <>
             <p onClick={this.showEditModal.bind(this, record.key)}>
-              Add win to player {record.key}
+              Add loss to player {record.key}
             </p>
             <Modal
             title="Alter score"
@@ -103,12 +103,25 @@ class TableBody extends React.Component {
     this.setState({ players: newArr })
     this.hideEditModal()
   }
-
+  
+  //Updates keys after performed deletion
+  //E.g. Row 5 is deleted:
+  //Row 6 updates key from 6 --> 5
+  //Row 7 updates key from 7 --> 6 etc.
+  updateTable(key) {
+    const newArr = this.state.players.slice()
+    const length = newArr.length;
+    for(let i = key; i < length; i++){
+      newArr[i].key--; 
+    };
+  }
 
   handleDeleteRow(key) {
     const { players } = this.state;
     const newPlayers = players.filter((item) => item.key !== key);
     this.setState({ players: newPlayers })
+    
+    this.updateTable(key);
   }
   
   showEditModal(key) {
