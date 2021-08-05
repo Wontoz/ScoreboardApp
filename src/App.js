@@ -1,9 +1,8 @@
 import logo from './img/Simumatik_Logo.png';
 import 'antd/dist/antd.css';
-import TableBody from './components/Table';
+import TableBody from './components/TableBody';
 import { Layout } from 'antd';
 import './App.css';
-import { useState } from 'react';
 
 const { Header, Content, Sider } = Layout;
 
@@ -28,7 +27,7 @@ function App() {
           backgroundColor: '#F0F2F5',
           zIndex: '999'
         }}>
-          <img src={logo} style={{
+          <img src={logo} alt="logo" style={{
             width: '200px'
           }}></img>
         </Header>
