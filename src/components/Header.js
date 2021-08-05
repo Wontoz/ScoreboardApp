@@ -10,9 +10,9 @@ const body = (
 
 const Header = () => {
     return (
-        <div>
+        <>
             {body}
-        </div>
+        </>
     )
 }
 

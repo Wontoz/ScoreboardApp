@@ -1,6 +1,40 @@
 body{
   font-family: "Roboto", Sans-serif;
 }
+.sider, .header {
+  background-color: #F0F2F5;
+}
+
+.sider {
+  overflow: auto;
+  height: 100vh;
+  background-color: #F0F2F5;
+  position: relative;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+
+.header {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  border: 1px solid black;
+  z-index: 999;
+}
+
+.logo {
+  width: 200px;
+}
+
+.content {
+  width: 60%;
+  margin: 60px auto auto auto;
+  padding: 0;
+}
 
 .Btn-green {
   font-size: 14px;
