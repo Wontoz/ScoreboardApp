@@ -1,7 +1,6 @@
 import logo from './img/Simumatik_Logo.png';
 import 'antd/dist/antd.css';
 import TableBody from './components/Table';
-import TableHeader from './components/TableHeader';
 import { Layout } from 'antd';
 import './App.css';
 import { useState } from 'react';

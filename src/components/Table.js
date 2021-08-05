@@ -1,5 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, Button, Row, Col, Modal, Input } from 'antd';
+
+const EditPlayerModule = (props) => {
+
+  let [isVisible, setVisible] = useState(false);
+
+  function showModal() {
+    setVisible(true);
+  };
+
+  function hideModal() {
+    setVisible(false);
+  };
+
+  function handleValueChange() {
+    props.action();
+    hideModal();
+  }
+
+  let body = 
+    <Modal
+    title="Alter score"
+    visible={isVisible}
+    onCancel={hideModal}
+    onOk={handleValueChange}
+    closable={false}
+    okText="Yes"
+    cancelText="No"
+    >Are you sure you want to adjust the {props.scoreType} for player?
+    </Modal>;
+
+  return(
+    <>
+    <p onClick={showModal}>
+      Add {props.scoreType}
+    </p>
+    {body}   
+    </> 
+  )
+}
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -19,7 +58,7 @@ class TableBody extends React.Component {
           dataIndex: 'participant',
           key: 'participant',
           defaultSortOrder: 'descend',
-          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses),
+          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses), 
         },
         {
           title: 'Wins',
@@ -36,21 +75,7 @@ class TableBody extends React.Component {
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
-            <>
-            <p onClick={this.showEditModal.bind(this, record.key)}>
-              Add win to player {record.key}
-            </p>
-            <Modal
-            title="Alter score"
-            visible={this.state.isEditModalVisible}
-            onCancel={this.hideEditModal.bind(this)}
-            onOk={this.handleWinIncrease.bind(this, this.state.playerToEdit)}
-            closable={false}
-            okText="Yes"
-            cancelText="No"
-            >Are you sure you want to adjust the score for player {this.state.playerToEdit}?
-            </Modal>
-            </>
+            <EditPlayerModule scoreType="wins" key={record.key} action={this.handleWinIncrease.bind(this, record.key)}></EditPlayerModule>
           )
         },
         {
@@ -58,21 +83,7 @@ class TableBody extends React.Component {
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (
-            <>
-            <p onClick={this.showEditModal.bind(this, record.key)}>
-              Add loss to player {record.key}
-            </p>
-            <Modal
-            title="Alter score"
-            visible={this.state.isEditModalVisible}
-            onCancel={this.hideEditModal.bind(this)}
-            onOk={this.handleLossIncrease.bind(this, this.state.playerToEdit)}
-            closable={false}
-            okText="Yes"
-            cancelText="No"
-            >Are you sure you want to adjust the score for player {this.state.playerToEdit}?
-            </Modal>
-            </>
+            <EditPlayerModule scoreType="losses" key={record.key} action={this.handleLossIncrease.bind(this, record.key)}></EditPlayerModule>
           )
         },
         {
@@ -86,7 +97,7 @@ class TableBody extends React.Component {
         },
       ],
       isModalVisible: false,
-      playerName: ('')
+      playerName: (''),
     }
   }
 
@@ -94,15 +105,14 @@ class TableBody extends React.Component {
     const newArr = this.state.players.slice()
     newArr[playerKey].wins++;
     this.setState({ players: newArr })
-    this.hideEditModal()
   }
 
   handleLossIncrease(playerKey) {
     const newArr = this.state.players.slice()
     newArr[playerKey].losses++;
     this.setState({ players: newArr })
-    this.hideEditModal()
   }
+  
   
   //Updates keys after performed deletion
   //E.g. Row 5 is deleted:
