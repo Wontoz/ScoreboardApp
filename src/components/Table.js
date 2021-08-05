@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button, Row, Col, Modal, Input } from 'antd';
+import { Table, Button, Row, Col } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import AddPlayerButton from './AddPlayerButton';
 
@@ -8,9 +8,6 @@ class TableBody extends React.Component {
     super(props);
 
     this.state = {
-      playerName: '',
-      isEditModalVisible: false,
-      playerToEdit: '',
       players: [
         { key: 0, participant: 'Player 1', wins: 5, losses: 0 },
         { key: 1, participant: 'Player 2', wins: 4, losses: 0 },
@@ -60,28 +57,27 @@ class TableBody extends React.Component {
           ),
         },
       ],
-      isModalVisible: false,
-      playerName: (''),
     }
   }
 
+  //Increment wins at a specific row, determined by the key variable
   handleWinIncrease(playerKey) {
     const newArr = this.state.players.slice()
     newArr[playerKey].wins++;
     this.setState({ players: newArr })
   }
 
+  //Increment losses at a specific row, determined by the key variable
   handleLossIncrease(playerKey) {
     const newArr = this.state.players.slice()
     newArr[playerKey].losses++;
     this.setState({ players: newArr })
   }
   
-  
   //Updates keys after performed deletion
-  //E.g. Row 5 is deleted:
-  //Row 6 updates key from 6 --> 5
-  //Row 7 updates key from 7 --> 6 etc.
+  //E.g. if row 5 is deleted:
+  //Row 6 key is updated from 6 --> 5
+  //Row 7 key is updated from 7 --> 6 etc.
   updateTable(key) {
     const newArr = this.state.players.slice()
     const length = newArr.length;
@@ -90,6 +86,7 @@ class TableBody extends React.Component {
     };
   }
 
+  //Delete a specific row, determined by the key variable
   handleDeleteRow(key) {
     const { players } = this.state;
     const newPlayers = players.filter((item) => item.key !== key);
