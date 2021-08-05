@@ -30,7 +30,7 @@ const AlterScoreModal = (props) => {
             closable={false}
             okText="Yes"
             cancelText="No"
-        >Are you sure you want to adjust the {props.scoreType} for player?
+        >Are you sure you want to adjust the {props.scoreType} for this player?
         </Modal>;
 
     return (

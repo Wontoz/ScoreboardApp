@@ -1,12 +1,14 @@
 import React from 'react';
 import { Table, Button, Row, Col, Modal, Input } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
+import AddPlayerButton from './AddPlayerButton';
 
 class TableBody extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      playerName: '',
       isEditModalVisible: false,
       playerToEdit: '',
       players: [
@@ -92,31 +94,16 @@ class TableBody extends React.Component {
     const { players } = this.state;
     const newPlayers = players.filter((item) => item.key !== key);
     this.setState({ players: newPlayers })
-    
     this.updateTable(key);
   }
 
-  showModal() {
-    this.setState({ isModalVisible: true })
-  }
-
-  hideModal() {
-    this.setState({ isModalVisible: false })
-  }
-  changePlayerName(e) {
-    this.setState({ playerName: e.target.value })
-  }
-
-  //Denna ska parent node ha
-  addPlayer() {
+  //Add new player to table by manipulating the player-state and adding a new row
+  handleNewPlayer(input) {
     const { players } = this.state;
-    const newPlayerStat = [{ key: (players.length), participant: this.state.playerName, wins: 0, losses: 0 }]
+    const newPlayerStat = [{ key: (players.length), participant: input, wins: 0, losses: 0 }]
     const joined = this.state.players.concat(newPlayerStat);
     this.setState({ players: joined })
-    this.hideModal();
   }
-
-
 
   render() {
     return (
@@ -131,12 +118,7 @@ class TableBody extends React.Component {
             <h1>Scoreboard</h1>
           </Col>
           <Col span={12}>
-            <Button type="primary" onClick={this.showModal.bind(this)}>
-              Add Person
-            </Button>
-            <Modal title="Add player" visible={this.state.isModalVisible} onOk={this.addPlayer.bind(this)} onCancel={this.hideModal.bind(this)}>
-              <Input size="large" placeholder="Enter name:" onChange={this.changePlayerName.bind(this)} />
-            </Modal>
+            <AddPlayerButton action={this.handleNewPlayer.bind(this)}></AddPlayerButton>
           </Col>
 
         </Row>
