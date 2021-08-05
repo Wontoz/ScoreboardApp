@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ScoreboardApp/static/css/main.a2aa7862.chunk.css",
+    "main.js": "/ScoreboardApp/static/js/main.fe3f9a83.chunk.js",
+    "main.js.map": "/ScoreboardApp/static/js/main.fe3f9a83.chunk.js.map",
+    "runtime-main.js": "/ScoreboardApp/static/js/runtime-main.53e57247.js",
+    "runtime-main.js.map": "/ScoreboardApp/static/js/runtime-main.53e57247.js.map",
+    "static/css/2.3804ad1f.chunk.css": "/ScoreboardApp/static/css/2.3804ad1f.chunk.css",
+    "static/js/2.59f6bdcc.chunk.js": "/ScoreboardApp/static/js/2.59f6bdcc.chunk.js",
+    "static/js/2.59f6bdcc.chunk.js.map": "/ScoreboardApp/static/js/2.59f6bdcc.chunk.js.map",
+    "static/js/3.3ab88a3f.chunk.js": "/ScoreboardApp/static/js/3.3ab88a3f.chunk.js",
+    "static/js/3.3ab88a3f.chunk.js.map": "/ScoreboardApp/static/js/3.3ab88a3f.chunk.js.map",
+    "index.html": "/ScoreboardApp/index.html",
+    "static/css/2.3804ad1f.chunk.css.map": "/ScoreboardApp/static/css/2.3804ad1f.chunk.css.map",
+    "static/css/main.a2aa7862.chunk.css.map": "/ScoreboardApp/static/css/main.a2aa7862.chunk.css.map",
+    "static/js/2.59f6bdcc.chunk.js.LICENSE.txt": "/ScoreboardApp/static/js/2.59f6bdcc.chunk.js.LICENSE.txt",
+    "static/media/Simumatik_Logo.0b4a6fef.png": "/ScoreboardApp/static/media/Simumatik_Logo.0b4a6fef.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53e57247.js",
+    "static/css/2.3804ad1f.chunk.css",
+    "static/js/2.59f6bdcc.chunk.js",
+    "static/css/main.a2aa7862.chunk.css",
+    "static/js/main.fe3f9a83.chunk.js"
+  ]
+}
