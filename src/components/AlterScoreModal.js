@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
+import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
 //Module that's displayed when user clicks on either arrow that alters a player's score
 const AlterScoreModal = (props) => {
@@ -20,7 +21,13 @@ const AlterScoreModal = (props) => {
         props.action();
         hideModal();
     }
-
+    let icon;
+    if(props.scoreType ==='wins'){
+        icon = <ArrowUpOutlined onClick={showModal}></ArrowUpOutlined>
+    } else if(props.scoreType === 'losses'){
+        icon = <ArrowDownOutlined onClick={showModal}></ArrowDownOutlined>;
+    };
+    
     let body =
         <Modal
             title="Alter score"
@@ -35,9 +42,7 @@ const AlterScoreModal = (props) => {
 
     return (
         <>
-            <p onClick={showModal}>
-                Add {props.scoreType}
-            </p>
+            {icon}
             {body}
         </>
     )

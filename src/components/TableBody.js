@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Button, Row, Col } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import AddPlayerButton from './AddPlayerButton';
+import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class TableBody extends React.Component {
           key: 'losses',
         },
         {
-          title: 'Add Win',
+          title: <ArrowUpOutlined/>,
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
@@ -40,7 +41,7 @@ class TableBody extends React.Component {
           )
         },
         {
-          title: 'Add loss',
+          title: <ArrowDownOutlined/>,
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (

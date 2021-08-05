@@ -29,7 +29,7 @@ const AddPlayerButton = (props) => {
 
     return (
         <>
-            <Button type="primary" onClick={showModal}>
+            <Button className={"Btn-green"} onClick={showModal}>
                 Add Person
             </Button>
             <Modal
