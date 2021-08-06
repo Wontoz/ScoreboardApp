@@ -8,6 +8,7 @@ class TableBody extends React.Component {
   constructor(props) {
     super(props);
 
+    //Initialize 3 players along with all table which is to be displayed
     this.state = {
       players: [
         { key: 0, participant: 'Name 1', wins: 5, losses: 0 },
@@ -40,7 +41,7 @@ class TableBody extends React.Component {
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
-            <AlterScoreModal scoreType="wins" action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal>
+            <AlterScoreModal scoreType="wins" action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal> //Modal which triggers when up-arrow is clicked
           ),
           align: 'center'
         },
@@ -50,7 +51,7 @@ class TableBody extends React.Component {
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (
-            <AlterScoreModal scoreType="losses" action={this.handleLossIncrease.bind(this, record.key)}></AlterScoreModal>
+            <AlterScoreModal scoreType="losses" action={this.handleLossIncrease.bind(this, record.key)}></AlterScoreModal> //Modal which triggers when down-arrow is clicked
           ),
           align: 'center'
         },
@@ -58,7 +59,7 @@ class TableBody extends React.Component {
           title: <CloseOutlined />,
           key: 'delete',
           render: (key, record) => (
-            <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)} />
+            <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)} /> //Icon which triggers handleDeleteRow on click
           ),
           align: 'center'
         },

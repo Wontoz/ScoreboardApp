@@ -21,7 +21,7 @@ const AddPlayerButton = (props) => {
         setPlayerName(e.target.value);
     };
 
-    //Send name-variable to input-handler in Table.js
+    //Add player by sending the input value of the modal to function handleNewPlayer.
     function handleAddClick() {
         props.action(playerName);
         hideModal();

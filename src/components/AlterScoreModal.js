@@ -16,7 +16,7 @@ const AlterScoreModal = (props) => {
         setVisible(false);
     };
 
-    //Update table using the funciton parameter that was sent in Table.js
+    //Update table by executing props.action (handleNewPlayer in TableBody.js)
     function handleYesClick() {
         props.action();
         hideModal();
