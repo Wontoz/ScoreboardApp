@@ -18,7 +18,7 @@ const AlterScoreModal = (props) => {
 
     //Update table using the funciton parameter that was sent in Table.js
     function handleYesClick() {
-        props.action(props.playerKey);
+        props.action();
         hideModal();
     }
     let icon;

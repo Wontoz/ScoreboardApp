@@ -35,6 +35,7 @@ const AddPlayerButton = (props) => {
             <Modal
                 title="Add player"
                 visible={isVisible}
+                onCancel={hideModal}
                 footer={[
                     <Button className={"Btn-red"} onClick={hideModal}>Cancel</Button>,
                     <Button className={"Btn-green"} onClick={handleAddClick}>Add</Button>

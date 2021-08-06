@@ -1,8 +1,8 @@
 import React from 'react';
-import { Table, Row, Col } from 'antd';
+import { Table } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
-import AddPlayerButton from './AddPlayerButton';
-import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined} from '@ant-design/icons';
+import TableHeader from './TableHeader';
+import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined } from '@ant-design/icons';
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class TableBody extends React.Component {
           dataIndex: 'participant',
           key: 'participant',
           defaultSortOrder: 'descend',
-          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses), 
+          sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses),
           align: 'center'
         },
         {
@@ -36,29 +36,29 @@ class TableBody extends React.Component {
           align: 'center'
         },
         {
-          title: <ArrowUpOutlined/>,
+          title: <ArrowUpOutlined />,
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
-            <AlterScoreModal scoreType="wins" key={record.key} action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal>
+            <AlterScoreModal scoreType="wins" action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal>
           ),
           align: 'center'
         },
-        
+
         {
-          title: <ArrowDownOutlined/>,
+          title: <ArrowDownOutlined />,
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (
-            <AlterScoreModal scoreType="losses" key={record.key} action={this.handleLossIncrease.bind(this, record.key)}></AlterScoreModal>
+            <AlterScoreModal scoreType="losses" action={this.handleLossIncrease.bind(this, record.key)}></AlterScoreModal>
           ),
           align: 'center'
         },
         {
-          title: <CloseOutlined/>,
+          title: <CloseOutlined />,
           key: 'delete',
           render: (key, record) => (
-            <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)}/>
+            <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)} />
           ),
           align: 'center'
         },
@@ -79,7 +79,7 @@ class TableBody extends React.Component {
     newArr[playerKey].losses++;
     this.setState({ players: newArr })
   }
-  
+
   //Updates keys after performed deletion
   //E.g. if row 5 is deleted:
   //Row 6 key is updated from 6 --> 5
@@ -87,8 +87,8 @@ class TableBody extends React.Component {
   updateTable(key) {
     const newArr = this.state.players.slice()
     const length = newArr.length;
-    for(let i = key; i < length; i++){
-      newArr[i].key--; 
+    for (let i = key; i < length; i++) {
+      newArr[i].key--;
     };
   }
 
@@ -111,20 +111,8 @@ class TableBody extends React.Component {
   render() {
     return (
       <>
-        <Row style={{
-          padding: '15px',
-          textAlign: 'center',
-          borderBottom: "1px solid #9fad87"
-        }}>
-          <Col span={12}>
-            <h1>Scoreboard</h1>
-          </Col>
-          <Col span={12}>
-            <AddPlayerButton action={this.handleNewPlayer.bind(this)}></AddPlayerButton>
-          </Col>
-
-        </Row>
-        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} showSorterTooltip={false} style={{borderBottom: "1px solid #9fad87"}}></Table>
+        <TableHeader action={this.handleNewPlayer.bind(this)}></TableHeader>
+        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} showSorterTooltip={false} style={{ borderBottom: "1px solid #9fad87" }}></Table>
       </>
     );
   }

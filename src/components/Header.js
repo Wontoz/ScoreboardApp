@@ -1,18 +1,9 @@
 import React from 'react';
-import { PageHeader} from 'antd';
-
-const body = (
-    <PageHeader
-        className = "scoreboard-header"
-        title="Scoreboard"
-    />
-);
+import { PageHeader } from 'antd';
 
 const Header = () => {
     return (
-        <>
-            {body}
-        </>
+        <PageHeader className="scoreboard-header" title="Scoreboard" />
     )
 }
 
