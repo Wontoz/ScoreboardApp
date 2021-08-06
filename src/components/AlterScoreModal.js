@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'antd';
+import { Modal, Button } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
 //Module that's displayed when user clicks on either arrow that alters a player's score
@@ -35,9 +35,11 @@ const AlterScoreModal = (props) => {
             onCancel={hideModal}
             onOk={handleValueChange}
             closable={false}
-            okText="Yes"
-            cancelText="No"
-        >Are you sure you want to adjust the {props.scoreType} for this player?
+            footer={[
+                <Button className={"Btn-red"} onClick={hideModal}>No</Button>,
+                <Button className={"Btn-green"} onClick={handleValueChange}>Yes</Button>
+            ]}>
+            Are you sure you want to adjust the {props.scoreType} for this player?
         </Modal>;
 
     return (

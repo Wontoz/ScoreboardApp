@@ -2,6 +2,11 @@ body{
   font-family: "Roboto", Sans-serif;
   color: #6E7381;
 }
+
+h1{
+  font-size: 20px;
+  font-weight: bold;
+}
 .sider, .header {
   background-color: #fff;
 }
@@ -33,9 +38,9 @@ body{
 }
 
 .content {
-  width: 100%;
-  margin: 64px auto auto auto;
+  position: relative;
   padding: 0;
+  margin-top: 63.5px;
   border-left: 1px solid #9fad87;
   border-right: 1px solid #9fad87;
   background-color: #fafafa;
@@ -47,6 +52,29 @@ body{
   background-color: #74B800;
   border-radius: 3px;
   color: #fff;
+}
+
+.Btn-red {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f54242;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.Btn-green:hover {
+  background-color: #fff;
+  color: #74B800;
+  border-color: #74B800;
+}
+
+.Btn-red:hover {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #f54242;
+  border: 1px solid #f54242;
 }
 
 .ant-table-column-sorter{

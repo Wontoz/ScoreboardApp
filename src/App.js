@@ -9,11 +9,11 @@ const { Header, Content, Sider } = Layout;
 function App() {
   return (
     <Layout>
+      <Header className={"header"}>
+        <img src={logo} alt="logo" className={"logo"} />
+      </Header>
       <Sider className={"sider left"} />
       <Layout>
-        <Header className={"header"}>
-          <img src={logo} alt="logo" className={"logo"} />
-        </Header>
         <Content className={"content"}>
           <TableBody></TableBody>
         </Content>

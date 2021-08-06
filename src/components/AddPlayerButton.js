@@ -35,8 +35,10 @@ const AddPlayerButton = (props) => {
             <Modal
                 title="Add player"
                 visible={isVisible}
-                onOk={handleAddPlayer}
-                onCancel={hideModal}>
+                footer={[
+                    <Button className={"Btn-red"} onClick={hideModal}>Cancel</Button>,
+                    <Button className={"Btn-green"} onClick={handleAddPlayer}>Add</Button>
+                ]}>
                 <Input size="large" placeholder="Enter name:" onChange={handleInputChange} />
             </Modal>
         </>

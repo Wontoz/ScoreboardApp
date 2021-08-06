@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, Row, Col } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import AddPlayerButton from './AddPlayerButton';
-import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined, BorderBottomOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined} from '@ant-design/icons';
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class TableBody extends React.Component {
           align: 'center'
         },
         {
-          title: 'Delete',
+          title: <CloseOutlined/>,
           key: 'delete',
           render: (key, record) => (
             <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)}/>
@@ -112,8 +112,9 @@ class TableBody extends React.Component {
     return (
       <>
         <Row style={{
-          padding: '5px',
+          padding: '15px',
           textAlign: 'center',
+          borderBottom: "1px solid #9fad87"
         }}>
           <Col span={12}>
             <h1>Scoreboard</h1>
@@ -123,7 +124,7 @@ class TableBody extends React.Component {
           </Col>
 
         </Row>
-        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} style={{borderBottom: "1px solid #9fad87"}}></Table>
+        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} showSorterTooltip={false} style={{borderBottom: "1px solid #9fad87"}}></Table>
       </>
     );
   }
