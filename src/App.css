@@ -1,14 +1,15 @@
 body{
   font-family: "Roboto", Sans-serif;
+  color: #6E7381;
 }
 .sider, .header {
-  background-color: #F0F2F5;
+  background-color: #fff;
 }
 
 .sider {
   overflow: auto;
   height: 100vh;
-  background-color: #F0F2F5;
+  background-color: #fff;
   position: relative;
 }
 .left {
@@ -22,8 +23,9 @@ body{
   width: 100vw;
   position: fixed;
   left: 0;
-  border: 1px solid black;
+  border-bottom: 1px solid #9fad87;
   z-index: 999;
+  background-color: #fff;
 }
 
 .logo {
@@ -31,9 +33,12 @@ body{
 }
 
 .content {
-  width: 60%;
-  margin: 60px auto auto auto;
+  width: 100%;
+  margin: 64px auto auto auto;
   padding: 0;
+  border-left: 1px solid #9fad87;
+  border-right: 1px solid #9fad87;
+  background-color: #fafafa;
 }
 
 .Btn-green {

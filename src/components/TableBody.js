@@ -1,8 +1,8 @@
 import React from 'react';
-import { Table, Button, Row, Col } from 'antd';
+import { Table, Row, Col } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import AddPlayerButton from './AddPlayerButton';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined, BorderBottomOutlined } from '@ant-design/icons';
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -21,16 +21,19 @@ class TableBody extends React.Component {
           key: 'participant',
           defaultSortOrder: 'descend',
           sorter: (a, b) => (a.wins - a.losses) - (b.wins - b.losses), 
+          align: 'center'
         },
         {
           title: 'Wins',
           dataIndex: 'wins',
           key: 'wins',
+          align: 'center'
         },
         {
           title: 'Losses',
           dataIndex: 'losses',
           key: 'losses',
+          align: 'center'
         },
         {
           title: <ArrowUpOutlined/>,
@@ -38,24 +41,26 @@ class TableBody extends React.Component {
           key: 'addWin',
           render: (key, record) => (
             <AlterScoreModal scoreType="wins" key={record.key} action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal>
-          )
+          ),
+          align: 'center'
         },
+        
         {
           title: <ArrowDownOutlined/>,
           dataIndex: 'addLoss',
           key: 'addLoss',
           render: (key, record,) => (
             <AlterScoreModal scoreType="losses" key={record.key} action={this.handleLossIncrease.bind(this, record.key)}></AlterScoreModal>
-          )
+          ),
+          align: 'center'
         },
         {
           title: 'Delete',
           key: 'delete',
           render: (key, record) => (
-            <Button onClick={this.handleDeleteRow.bind(this, record.key)}>
-              Delete {record.key}
-            </Button>
+            <CloseOutlined onClick={this.handleDeleteRow.bind(this, record.key)}/>
           ),
+          align: 'center'
         },
       ],
     }
@@ -108,9 +113,7 @@ class TableBody extends React.Component {
       <>
         <Row style={{
           padding: '5px',
-          marginTop: '15px',
           textAlign: 'center',
-          border: '1px solid black'
         }}>
           <Col span={12}>
             <h1>Scoreboard</h1>
@@ -120,7 +123,7 @@ class TableBody extends React.Component {
           </Col>
 
         </Row>
-        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} ></Table>
+        <Table columns={this.state.columns} dataSource={this.state.players} pagination={false} style={{borderBottom: "1px solid #9fad87"}}></Table>
       </>
     );
   }
