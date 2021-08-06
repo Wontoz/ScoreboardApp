@@ -22,7 +22,7 @@ const AddPlayerButton = (props) => {
     };
 
     //Send name-variable to input-handler in Table.js
-    function handleAddPlayer() {
+    function handleAddClick() {
         props.action(playerName);
         hideModal();
     }
@@ -37,7 +37,7 @@ const AddPlayerButton = (props) => {
                 visible={isVisible}
                 footer={[
                     <Button className={"Btn-red"} onClick={hideModal}>Cancel</Button>,
-                    <Button className={"Btn-green"} onClick={handleAddPlayer}>Add</Button>
+                    <Button className={"Btn-green"} onClick={handleAddClick}>Add</Button>
                 ]}>
                 <Input size="large" placeholder="Enter name:" onChange={handleInputChange} />
             </Modal>

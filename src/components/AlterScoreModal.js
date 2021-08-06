@@ -17,8 +17,8 @@ const AlterScoreModal = (props) => {
     };
 
     //Update table using the funciton parameter that was sent in Table.js
-    function handleValueChange() {
-        props.action();
+    function handleYesClick() {
+        props.action(props.playerKey);
         hideModal();
     }
     let icon;
@@ -33,13 +33,13 @@ const AlterScoreModal = (props) => {
             title="Alter score"
             visible={isVisible}
             onCancel={hideModal}
-            onOk={handleValueChange}
+            onOk={handleYesClick}
             closable={false}
             footer={[
                 <Button className={"Btn-red"} onClick={hideModal}>No</Button>,
-                <Button className={"Btn-green"} onClick={handleValueChange}>Yes</Button>
+                <Button className={"Btn-green"} onClick={handleYesClick}>Yes</Button>
             ]}>
-            Are you sure you want to adjust the {props.scoreType} for this player?
+            Are you sure you want to adjust the {props.scoreType} for this player? 
         </Modal>;
 
     return (
