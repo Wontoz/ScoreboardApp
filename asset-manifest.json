@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/ScoreboardApp/static/css/main.bbb17918.chunk.css",
-    "main.js": "/ScoreboardApp/static/js/main.069b14de.chunk.js",
-    "main.js.map": "/ScoreboardApp/static/js/main.069b14de.chunk.js.map",
-    "runtime-main.js": "/ScoreboardApp/static/js/runtime-main.53e57247.js",
-    "runtime-main.js.map": "/ScoreboardApp/static/js/runtime-main.53e57247.js.map",
+    "main.js": "/ScoreboardApp/static/js/main.de2ac03b.chunk.js",
+    "main.js.map": "/ScoreboardApp/static/js/main.de2ac03b.chunk.js.map",
+    "runtime-main.js": "/ScoreboardApp/static/js/runtime-main.a63f857f.js",
+    "runtime-main.js.map": "/ScoreboardApp/static/js/runtime-main.a63f857f.js.map",
     "static/css/2.3804ad1f.chunk.css": "/ScoreboardApp/static/css/2.3804ad1f.chunk.css",
-    "static/js/2.9cbe27f5.chunk.js": "/ScoreboardApp/static/js/2.9cbe27f5.chunk.js",
-    "static/js/2.9cbe27f5.chunk.js.map": "/ScoreboardApp/static/js/2.9cbe27f5.chunk.js.map",
-    "static/js/3.3ab88a3f.chunk.js": "/ScoreboardApp/static/js/3.3ab88a3f.chunk.js",
-    "static/js/3.3ab88a3f.chunk.js.map": "/ScoreboardApp/static/js/3.3ab88a3f.chunk.js.map",
+    "static/js/2.1cc2f66b.chunk.js": "/ScoreboardApp/static/js/2.1cc2f66b.chunk.js",
+    "static/js/2.1cc2f66b.chunk.js.map": "/ScoreboardApp/static/js/2.1cc2f66b.chunk.js.map",
+    "static/js/3.fedf06e3.chunk.js": "/ScoreboardApp/static/js/3.fedf06e3.chunk.js",
+    "static/js/3.fedf06e3.chunk.js.map": "/ScoreboardApp/static/js/3.fedf06e3.chunk.js.map",
     "index.html": "/ScoreboardApp/index.html",
     "static/css/2.3804ad1f.chunk.css.map": "/ScoreboardApp/static/css/2.3804ad1f.chunk.css.map",
     "static/css/main.bbb17918.chunk.css.map": "/ScoreboardApp/static/css/main.bbb17918.chunk.css.map",
-    "static/js/2.9cbe27f5.chunk.js.LICENSE.txt": "/ScoreboardApp/static/js/2.9cbe27f5.chunk.js.LICENSE.txt",
+    "static/js/2.1cc2f66b.chunk.js.LICENSE.txt": "/ScoreboardApp/static/js/2.1cc2f66b.chunk.js.LICENSE.txt",
     "static/media/Simumatik_Logo.0b4a6fef.png": "/ScoreboardApp/static/media/Simumatik_Logo.0b4a6fef.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.53e57247.js",
+    "static/js/runtime-main.a63f857f.js",
     "static/css/2.3804ad1f.chunk.css",
-    "static/js/2.9cbe27f5.chunk.js",
+    "static/js/2.1cc2f66b.chunk.js",
     "static/css/main.bbb17918.chunk.css",
-    "static/js/main.069b14de.chunk.js"
+    "static/js/main.de2ac03b.chunk.js"
   ]
 }
