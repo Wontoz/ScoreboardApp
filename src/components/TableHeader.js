@@ -8,7 +8,7 @@ const TableHeader = (props) => {
   return (
     <Row className={"row"}>
       <Col span={12}>
-        <h1>Scoreboard</h1>
+        <h2>Scoreboard</h2>
       </Col>
       <Col span={12}>
         <AddPlayerButton action={props.action}/>

@@ -1,4 +1,3 @@
-import logo from './img/Simumatik_Logo.png';
 import 'antd/dist/antd.css';
 import TableBody from './components/TableBody';
 import { Layout } from 'antd';
@@ -10,7 +9,7 @@ function App() {
   return (
     <Layout>
       <Header className={"header"}>
-        <img src={logo} alt="logo" className={"logo"} />
+        <h1>Simple Scoreboard App</h1>
       </Header>
       <Sider className={"sider left"} />
       <Layout>

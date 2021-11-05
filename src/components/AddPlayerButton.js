@@ -30,10 +30,10 @@ const AddPlayerButton = (props) => {
     return (
         <>
             <Button className={"Btn-green"} onClick={showModal}>
-                Add Person
+                Add Participant
             </Button>
             <Modal
-                title="Add player"
+                title="Add participant"
                 visible={isVisible}
                 onCancel={hideModal}
                 footer={[

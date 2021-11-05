@@ -1,8 +1,8 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Tooltip  } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import TableHeader from './TableHeader';
-import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined} from '@ant-design/icons';
 
 class TableBody extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class TableBody extends React.Component {
           dataIndex: 'addWin',
           key: 'addWin',
           render: (key, record) => (
-            <AlterScoreModal scoreType="wins" action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal> //Modal which triggers when up-arrow is clicked
+              <AlterScoreModal scoreType="wins" action={this.handleWinIncrease.bind(this, record.key)}></AlterScoreModal> //Modal which triggers when up-arrow is clicked
           ),
           align: 'center'
         },
