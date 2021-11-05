@@ -16,6 +16,6 @@ Click the demo link or clone/download the repository on your local machine.
 ```npm run start```    
 #### Yarn  
 ```yarn install```  
-```yarn run build```  
-```yarn run start```
+```yarn build```  
+```yarn start```
 
