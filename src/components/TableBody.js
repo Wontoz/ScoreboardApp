@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Tooltip  } from 'antd';
+import { Table } from 'antd';
 import AlterScoreModal from './AlterScoreModal';
 import TableHeader from './TableHeader';
 import { ArrowUpOutlined, ArrowDownOutlined, CloseOutlined} from '@ant-design/icons';
