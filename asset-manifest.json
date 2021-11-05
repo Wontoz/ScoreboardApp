@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ScoreboardApp/static/css/main.c1263b07.chunk.css",
-    "main.js": "/ScoreboardApp/static/js/main.a2665fdf.chunk.js",
-    "main.js.map": "/ScoreboardApp/static/js/main.a2665fdf.chunk.js.map",
+    "main.js": "/ScoreboardApp/static/js/main.bfe59fb5.chunk.js",
+    "main.js.map": "/ScoreboardApp/static/js/main.bfe59fb5.chunk.js.map",
     "runtime-main.js": "/ScoreboardApp/static/js/runtime-main.be1852a1.js",
     "runtime-main.js.map": "/ScoreboardApp/static/js/runtime-main.be1852a1.js.map",
     "static/css/2.3804ad1f.chunk.css": "/ScoreboardApp/static/css/2.3804ad1f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.3804ad1f.chunk.css",
     "static/js/2.a8c67ce8.chunk.js",
     "static/css/main.c1263b07.chunk.css",
-    "static/js/main.a2665fdf.chunk.js"
+    "static/js/main.bfe59fb5.chunk.js"
   ]
 }
